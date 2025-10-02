@@ -34,8 +34,8 @@ jobs:
       # 4. 安装依赖
       - name: Install Dependencies
         run: |
-          npm install
-
+          npm install -g hexo-cli
+          npm ci
       # 5. 配置部署环境和SSH密钥
       - name: Setup Deployment Environment
         env:
