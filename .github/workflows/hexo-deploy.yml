@@ -1,0 +1,56 @@
+name: Hexo Blog CI
+
+on:
+  push:
+    branches: [ main ] # 当推送至 main 分支时触发，请根据你的源码分支名修改
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 拉取博客源码
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          submodules: false # 如果主题是 submodule，务必设为 true
+
+      # 2. 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24' # 建议使用稳定的 LTS 版本
+
+      # 3. 缓存依赖以加速构建
+      - name: Cache Node Modules
+        uses: actions/cache@v4
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 4. 安装依赖
+      - name: Install Dependencies
+        run: |
+          npm install -g hexo-cli
+          npm install
+
+      # 5. 配置部署环境和SSH密钥
+      - name: Setup Deployment Environment
+        env:
+          HEXO_DEPLOY_PRI: ${{ secrets.HEXO_DEPLOY_PRI }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "cuteyunq1ng" # 替换为你的用户名
+          git config --global user.email "jianghe232@gmail.com" # 替换为你的邮箱
+
+      # 6. 生成静态文件并部署
+      - name: Generate and Deploy
+        run: |
+          hexo clean
+          hexo generate --deploy
