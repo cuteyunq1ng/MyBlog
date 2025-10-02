@@ -12,6 +12,7 @@
     "version": "8.0.0"
   },
   "dependencies": {
+    "@fancyapps/ui": "^6.0.33",
     "hexo": "^8.0.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
@@ -24,6 +25,7 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-butterfly": "^5.5.0",
-    "hexo-theme-landscape": "^1.0.0"
+    "hexo-theme-landscape": "^1.0.0",
+    "hexo-wordcount": "^6.0.1"
   }
 }
