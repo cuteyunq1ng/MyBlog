@@ -71,7 +71,7 @@ blog_sync() {
     git commit -m "$1"
     
     echo -e "${YELLOW}推送到远程仓库...${NC}"
-    if git push origin "$MAIN_BRANCH"; then
+    if git push myblogongithub "$MAIN_BRANCH"; then
         echo -e "${GREEN}✅ 同步成功！GitHub Actions 将自动部署你的博客${NC}"
         echo -e "${GREEN}📝 提交信息: $1${NC}"
     else
