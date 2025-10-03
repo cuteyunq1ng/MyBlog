@@ -1,10 +1,12 @@
 ---
 title: {{ title }}
 date: {{ date }}
-updated: {{date}}
+updated: {{ date }}
 top_img: 
+cover: 
 tags: 
 categories: 
 keywords: 
 description: 
+series: 
 ---

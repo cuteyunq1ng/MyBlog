@@ -1,16 +1,19 @@
 ---
 title: OSI7-TCP-IP4层模型
+top_img: /img/图解OSI7-TCP-IP4模型.awebp
+tags:
+  - 协议
+  - 模型
+categories: 计算机网络
+keywords: 'OSI 七层模型, TCP/IP 四层模型'
+description: 关于网络通信模型的理论/实际的学习
+abbrlink: 24491c93
 date: 2025-10-03 02:35:48
-updated: 2025-10-03 02:35:48
-top_img:
-tags: 协议 模型
-categories: 网络
-keywords:
-description:
+updated:
 ---
 
 ## OSI七层模型详细总结
-
+![](/img/图解OSI7-TCP-IP4模型.awebp)
 ### 第1层：物理层
 - **核心功能**：传输原始比特流，定义电气、机械和功能标准
 - **处理单位**：比特
@@ -98,7 +101,8 @@ TCP/IP模型是互联网实际使用的标准，可以看作OSI模型的简化�
 ```
 原始数据 → 应用层数据 → 传输层段 → 网络层包 → 数据链路层帧 → 物理层比特流
 ```
-
+![](/img/数据在网络中传输.awebp)
+![](/img/四层模型中的数据形式.awebp)
 **对应关系**：
 - 应用层数据 + TCP头 = **段**
 - 段 + IP头 = **包** 
