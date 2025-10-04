@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 配置区域 - 根据你的实际情况修改
-BLOG_ROOT="$HOME/Public/myblog/"  # 修改为你的博客根目录路径
+BLOG_ROOT="/home/yunq1ng/Github/myblog"
 POSTS_DIR="$HOME/Myblog"
 MAIN_BRANCH="main"  # 或 master，根据你的仓库设置
 
@@ -28,6 +28,7 @@ new_post() {
     local new_file=$(find source/_posts -name "*$1*" -type f | head -1)
     if [ -n "$new_file" ]; then
         echo -e "${GREEN}文章已创建: $new_file${NC}"
+        echo -e "${GREEN}文章路径: $HOME/Myblog${NC}"
     fi
 }
 
