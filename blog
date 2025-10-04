@@ -28,7 +28,6 @@ new_post() {
     local new_file=$(find source/_posts -name "*$1*" -type f | head -1)
     if [ -n "$new_file" ]; then
         echo -e "${GREEN}文章已创建: $new_file${NC}"
-        echo -e "${GREEN}你可以在 ~/my_blog_posts/ 目录中找到它${NC}"
     fi
 }
 
@@ -56,6 +55,7 @@ blog_sync() {
     
     echo -e "${BLUE}同步博客到远程仓库...${NC}"
     cd "$BLOG_ROOT"
+    hexo clean
     
     # 检查是否有更改
     if git diff-index --quiet HEAD --; then

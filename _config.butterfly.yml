@@ -19,11 +19,20 @@ nav:
 
 menu:
   首页: / || fas fa-home
-  分类: /categories/ || fas fa-folder-open
-  标签: /tags/ || fas fa-tags
-  时间轴: /archives/ || fas fa-archive
+  文章||fas fa-book:
+    分类: /categories/ || fas fa-folder-open
+    标签: /tags/ || fas fa-tags
+    归档: /archives/ || fas fa-archive
+  分类||fas fa-folder-open:
+    漏洞复现: /tags/ || fas fa-flag
+    代码审计: /archives/ || fas fa-archive
+    Linux: /tags/ || fas fa-linux
+    Code: /tags/ || fas fa-code
+    工具: /archives/ || fas fa-screwdriver-wrench
+    随记: /archives/ || fas fa-note-sticky
+    计算机网络: /categories/计算机网络/ || fas fa-folder-open
+  说说: /shuoshuo/ || fas fa-note-sticky
   友链: /link/ || fas fa-link
-  关于: /about/ || fas fa-heart
   
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
@@ -52,17 +61,17 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+  fab fa-github: https://github.com/cuteyunq1ng || Github || '#24292e'
+  fas fa-envelope: yunq1ng:jianghe232@gmail.com || Email || '#4a7dbe'
 
 # --------------------------------------
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /bg/hjli.jpg
 
 avatar:
-  img: /img/test.jpg
+  img: /bg/hjli.jpg
   #img: /img/butterfly-icon.png
   effect: false
 
@@ -214,15 +223,15 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   text:
   QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+    - img: /bg/wechat.png
+      link: 
+      text: wechat
+    - img: /bg/ali.png
+      link: 
+      text: alipay
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -290,7 +299,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: TRY HARDER, WORK HARDER!
     button:
       enable: true
       icon: fab fa-github
@@ -298,7 +307,7 @@ aside:
       link: https://github.com/cuteyunq1ng
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 这是我的 Blog, 分享我的学习成长历程。争取每天发表一篇文章。
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -368,9 +377,9 @@ rightside_bottom:
 
 # Conversion between Traditional and Simplified Chinese
 translate:
-  enable: false
+  enable: true
   # The text of a button
-  default: 繁
+  default: 简
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
   defaultEncoding: 2
   # Time delay
