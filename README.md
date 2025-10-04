@@ -11,6 +11,10 @@
 
 1. 本地需要安装好 node.js 以及 hexo
 2. 复制整个仓库到本地
+   ```shell
+     git clone git@github.com:cuteyunq1ng/myblog.git
+     cd myblog
+   ```
 3. 给 `source/_posts` 创建一个软链接到你喜欢的地方
    ```ln -s source/_posts $HOME/Myblog```
 4. 将 blog 添加到 path
@@ -32,6 +36,6 @@
 
 工作流示例:
   1. blog new '我的新文章'     # 创建文章
-  2. 编辑 ~/my_blog_posts/我的新文章.md
+  2. 编辑 ~/{you_blog_posts}/我的新文章.md
   3. blog test '本地查看文章'    # 提交发布
   4. blog sync '添加新文章'    # 提交发布
